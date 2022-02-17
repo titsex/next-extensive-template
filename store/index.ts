@@ -3,7 +3,9 @@ import { createWrapper, MakeStore } from 'next-redux-wrapper'
 import { reducer, RootState } from '@reducer/index'
 import { AnyAction, Store } from 'redux'
 
-const makeStore: MakeStore<Store<RootState>> = () => configureStore({ reducer })
+const makeStore: MakeStore<Store<RootState>> = () =>
+    configureStore({ reducer, middleware: getDefaultMiddleware => getDefaultMiddleware() })
+
 export const wrapper = createWrapper<Store<RootState>>(makeStore)
 
 export type AppStore = ReturnType<typeof makeStore>

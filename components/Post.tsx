@@ -1,18 +1,14 @@
 import { useTypedSelector } from '@hook/useTypedSelector'
 import { fetchPost } from '@store/actions-creators/post'
-import { useAppDispatch } from '@hook/useAppDispatch'
 import { useTypedActions } from '@hook/useTypedActions'
+import { useAppDispatch } from '@hook/useAppDispatch'
 import React from 'react'
 
-const Posts = () => {
+const Post = () => {
     const { error, post, isHave } = useTypedSelector(state => state.post)
     const { resetPosts } = useTypedActions(actions => actions.post)
 
     const dispatch = useAppDispatch()
-
-    const getPost = async () => {
-        await dispatch(await fetchPost())
-    }
 
     return (
         <div className="card">
@@ -25,8 +21,8 @@ const Posts = () => {
                     <div className="mb-4 w-100">
                         <div className="list-group">
                             <div className="list-group-item">
-                                <h5 className="mb-1">{post.title}</h5>
-                                <p className="mb-1">{post.body}</p>
+                                <h5 className="mb-1 text-center">{post.title}</h5>
+                                <p className="mb-1 text-center">{post.body}</p>
                             </div>
                         </div>
                     </div>
@@ -35,11 +31,15 @@ const Posts = () => {
                 )}
 
                 <div className="btn-group w-100">
-                    <button onClick={async () => await getPost()} disabled={isHave} className="btn btn-outline-success">
+                    <button
+                        onClick={async () => await dispatch(fetchPost())}
+                        disabled={isHave}
+                        className="btn btn-outline-success"
+                    >
                         Получить пост
                     </button>
 
-                    <button onClick={resetPosts} disabled={!isHave} className="btn btn-outline-danger">
+                    <button onClick={() => resetPosts()} disabled={!isHave} className="btn btn-outline-danger">
                         Удалить пост
                     </button>
                 </div>
@@ -55,4 +55,4 @@ const Posts = () => {
     )
 }
 
-export default Posts
+export default Post

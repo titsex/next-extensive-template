@@ -3,6 +3,7 @@ import 'highlight.js/styles/atom-one-dark.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
 import type { AppProps } from 'next/app'
+import Layout from '@component/Layout'
 import Script from 'next/script'
 import { wrapper } from 'store'
 import Head from 'next/head'
@@ -15,7 +16,9 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
                 <title>Best Next Template</title>
             </Head>
 
-            <Component {...pageProps} />
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
 
             {/*
               @ru Задаем глобальные стили для всего проекта.

@@ -15,16 +15,16 @@ const Counter = () => {
                 <h4 className="text-center">Счетчик: {count}</h4>
 
                 <div className="btn-group w-100 mt-3">
-                    <button onClick={increment} className="btn btn-outline-primary">
+                    <button onClick={() => increment()} className="btn btn-outline-primary">
                         Инкремент
                     </button>
 
-                    <button onClick={decrement} className="btn btn-outline-success">
+                    <button onClick={() => decrement()} className="btn btn-outline-success">
                         Декремент
                     </button>
                 </div>
 
-                <button onClick={resetCounter} disabled={count === 0} className="btn btn-danger mt-3 w-100">
+                <button onClick={() => resetCounter()} disabled={count === 0} className="btn btn-danger mt-3 w-100">
                     Сбросить
                 </button>
             </div>
