@@ -1,12 +1,12 @@
 import { useTypedSelector } from '@hook/useTypedSelector'
 import { fetchPost } from '@store/actions-creators/post'
 import { useAppDispatch } from '@hook/useAppDispatch'
-import { useActions } from '@hook/useActions'
+import { useTypedActions } from '@hook/useTypedActions'
 import React from 'react'
 
 const Posts = () => {
     const { error, post, isHave } = useTypedSelector(state => state.post)
-    const { resetPosts } = useActions()
+    const { resetPosts } = useTypedActions(actions => actions.post)
 
     const dispatch = useAppDispatch()
 

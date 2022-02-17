@@ -1,10 +1,10 @@
 import { useTypedSelector } from '@hook/useTypedSelector'
-import { useActions } from '@hook/useActions'
+import { useTypedActions } from '@hook/useTypedActions'
 import React from 'react'
 
 const Counter = () => {
     const { count } = useTypedSelector(state => state.counter)
-    const { increment, decrement, resetCounter } = useActions()
+    const { increment, decrement, resetCounter } = useTypedActions(actions => actions.counter)
 
     return (
         <div className="card">
