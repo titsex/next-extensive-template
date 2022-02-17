@@ -11,7 +11,7 @@ const Post = () => {
     const dispatch = useAppDispatch()
 
     return (
-        <div className="card">
+        <div className="card mb-3">
             <div className="m-5">
                 <h3 className="text-center">Пример махинаций с асинхронными запросами</h3>
 
@@ -27,7 +27,7 @@ const Post = () => {
                         </div>
                     </div>
                 ) : (
-                    <h3 className="text-center mb-4">Список постов пуст</h3>
+                    <h3 className="text-center mb-4">Пост не найден</h3>
                 )}
 
                 <div className="btn-group w-100">

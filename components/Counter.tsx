@@ -7,7 +7,7 @@ const Counter = () => {
     const { increment, decrement, resetCounter } = useTypedActions(actions => actions.counter)
 
     return (
-        <div className="card">
+        <div className="card mb-3">
             <div className="m-5">
                 <h1 className="text-center">Пример махинаций с числами</h1>
 
