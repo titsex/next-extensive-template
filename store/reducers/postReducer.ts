@@ -4,6 +4,7 @@ import { IPost, PostState } from '@type/post'
 
 const initialState: PostState = {
     post: {} as IPost,
+    isHave: false,
     error: '',
 }
 
@@ -13,16 +14,18 @@ export const postSlice = createSlice({
     reducers: {
         resetPosts: state => {
             state.post = {} as IPost
+            state.isHave = false
         },
     },
     extraReducers: builder => {
         builder
             .addCase(fetchPost.fulfilled, (state, action) => {
                 state.post = action.payload
+                state.isHave = true
                 state.error = ''
             })
             .addCase(fetchPost.rejected, (state, action) => {
-                if (!action.payload) state.error = 'Неизвестная ошибка'
+                state.error = (action.payload as string) || 'Неизвестная ошибка'
             })
     },
 })

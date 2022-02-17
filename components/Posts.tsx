@@ -5,10 +5,14 @@ import { useActions } from '@hook/useActions'
 import React from 'react'
 
 const Posts = () => {
-    const { error, post } = useTypedSelector(state => state.post)
+    const { error, post, isHave } = useTypedSelector(state => state.post)
     const { resetPosts } = useActions()
 
     const dispatch = useAppDispatch()
+
+    const getPost = async () => {
+        await dispatch(await fetchPost())
+    }
 
     return (
         <div className="card">
@@ -17,13 +21,11 @@ const Posts = () => {
 
                 <p className="text-center">Всё строго типизировано и в коде у Вас уже будут подсказки</p>
 
-                {Object.keys(post).length ? (
-                    <div className="mb-4 w-100 m-auto">
-                        <div className="list-group m-1 m-auto">
+                {isHave ? (
+                    <div className="mb-4 w-100">
+                        <div className="list-group">
                             <div className="list-group-item">
-                                <div className="d-flex w-100 justify-content-between">
-                                    <h5 className="mb-1">{post.title}</h5>
-                                </div>
+                                <h5 className="mb-1">{post.title}</h5>
                                 <p className="mb-1">{post.body}</p>
                             </div>
                         </div>
@@ -33,19 +35,11 @@ const Posts = () => {
                 )}
 
                 <div className="btn-group w-100">
-                    <button
-                        onClick={async () => await dispatch(await fetchPost())}
-                        disabled={!!Object.keys(post).length}
-                        className="btn btn-outline-success"
-                    >
+                    <button onClick={async () => await getPost()} disabled={isHave} className="btn btn-outline-success">
                         Получить пост
                     </button>
 
-                    <button
-                        onClick={resetPosts}
-                        disabled={!Object.keys(post).length}
-                        className="btn btn-outline-danger"
-                    >
+                    <button onClick={resetPosts} disabled={!isHave} className="btn btn-outline-danger">
                         Удалить пост
                     </button>
                 </div>
