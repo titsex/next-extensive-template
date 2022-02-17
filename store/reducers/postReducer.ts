@@ -1,4 +1,4 @@
-import { fetchPosts } from '@store/actions-creators/post'
+import { fetchPost } from '@store/actions-creators/post'
 import { createSlice } from '@reduxjs/toolkit'
 import { IPost, PostState } from '@type/post'
 
@@ -17,11 +17,11 @@ export const postSlice = createSlice({
     },
     extraReducers: builder => {
         builder
-            .addCase(fetchPosts.fulfilled, (state, action) => {
+            .addCase(fetchPost.fulfilled, (state, action) => {
                 state.post = action.payload
                 state.error = ''
             })
-            .addCase(fetchPosts.rejected, (state, action) => {
+            .addCase(fetchPost.rejected, (state, action) => {
                 if (!action.payload) state.error = 'Неизвестная ошибка'
             })
     },

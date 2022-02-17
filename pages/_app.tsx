@@ -18,7 +18,8 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
             <Component {...pageProps} />
 
             {/*
-              Задаем глобальные стили для всего проекта.
+              @ru Задаем глобальные стили для всего проекта.
+              @en Setting global styles for the entire project.
             */}
 
             <style jsx global>{`
@@ -28,8 +29,11 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
             `}</style>
 
             {/*
-                Скрипт ниже подключает bootstrap для всего проекта. Если удалите данный скрипт,
-                то функционал для тех же dropdown придеться писать самому.
+                @ru Скрипт ниже подключает bootstrap для всего проекта. Если удалите данный скрипт,
+                    то функционал для тех же dropdown придеться писать самому.
+
+                @en The script below connects bootstrap for the entire project. If you delete this script,
+                    then you will have to write the functionality for the same dropdown yourself.
             */}
 
             <Script
