@@ -1,7 +1,7 @@
 import Navbar from '@component/Navbar'
 import React from 'react'
 
-const Layout = ({ children }: { children: JSX.Element }) => {
+const Layout: React.FC = ({ children }) => {
     return (
         <>
             <Navbar />

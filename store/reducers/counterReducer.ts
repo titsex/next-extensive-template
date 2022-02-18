@@ -1,4 +1,4 @@
-import { CounterState } from '@type/counter.type'
+import { CounterState } from '@type/reducers/counter.type'
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState: CounterState = {

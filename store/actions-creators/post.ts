@@ -1,5 +1,5 @@
+import { PostActionTypes } from '@type/reducers/post.type'
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { PostActionTypes } from '@type/post.type'
 import axios from 'axios'
 
 export const fetchPost = createAsyncThunk(PostActionTypes.FETCH_POSTS, async () => {

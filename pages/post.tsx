@@ -1,7 +1,8 @@
 import Post from '@component/Post'
+import { NextPage } from 'next'
 import React from 'react'
 
-const PostPage = () => {
+const PostPage: NextPage = () => {
     return (
         <div className="position-absolute start-50 top-50 translate-middle h-75">
             <Post />

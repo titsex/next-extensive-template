@@ -1,5 +1,5 @@
+import { IPost, PostState } from '@type/reducers/post.type'
 import { fetchPost } from '@store/actions-creators/post'
-import { IPost, PostState } from '@type/post.type'
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState: PostState = {

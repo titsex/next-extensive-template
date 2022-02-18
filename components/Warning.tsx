@@ -1,4 +1,3 @@
-import A from '@component/A'
 import React from 'react'
 
 const Warning = () => {
