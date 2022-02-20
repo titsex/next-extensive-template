@@ -1,11 +1,21 @@
 {
-  "name": "next-redux-bootstrap-eslint-prettier-auth",
-  "private": true,
+  "name": "next-extensive-template",
+  "description": "Extensive template for NEXT.js with redux and redux-toolkit already set up",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://guthub.com/titsex/next-extensive-template#readme",
+  "repository": "github:titsex/next-extensive-template",
+  "author": "titsex <titsex23@gmail.com> (https://github.com/titsex)",
+  "keywords": ["next.js", "next", "next-redux", "next-template", "next-redux-toolkit"],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
+  },
+  "bugs": {
+    "email": "titsex23@gmail.com",
+    "url": "https://guthub.com/titsex/next-extensive-template/issues"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.2",
