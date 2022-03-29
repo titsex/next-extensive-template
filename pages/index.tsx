@@ -11,6 +11,8 @@ const Home: NextPage = () => {
             <Warning />
             <Counter />
             <Post />
+
+            <div className="pt-4" />
         </div>
     )
 }
