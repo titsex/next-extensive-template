@@ -55,6 +55,8 @@ pnpm start
 # Why does authorization not work?
 > Because local variables are empty
 
+> #### Create .env file in the root folder of the project where you deployed the template
+> #### Add http://localhost:3000 to the NEXTAUTH_URL variable in .env
 > #### The code contains an example of authorization via github.
 > #### For authorization to work, we need to create an OAuth App
 > #### In order to create an OAuth App, go to the page: https://github.com/settings/developers
