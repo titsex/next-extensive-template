@@ -4,7 +4,7 @@ import React from 'react'
 
 const Counter = () => {
     const { count } = useTypedSelector(state => state.counter)
-    const { increment, decrement, resetCounter } = useTypedActions(actions => actions.counter)
+    const { increment, decrement, reset } = useTypedActions(actions => actions.counter)
 
     return (
         <div className="card mb-3">
@@ -24,7 +24,7 @@ const Counter = () => {
                     </button>
                 </div>
 
-                <button onClick={() => resetCounter()} disabled={count === 0} className="btn btn-danger mt-3 w-100">
+                <button onClick={() => reset()} disabled={count === 0} className="btn btn-danger mt-3 w-100">
                     Сбросить
                 </button>
             </div>

@@ -24,6 +24,15 @@ const Home: NextPage = () => {
 
 Home.getInitialProps = wrapper.getInitialPageProps(store => async () => {
     const dispatch = store.dispatch as NextThunkDispatch
+
+    /*
+        @ru Проверяем, есть ли пост. Если да, возвращаем.. ничего? Ибо зачем делать запрос на получения поста, если он уже есть.
+        @en Check if there is a post. If yes, we return it.. nothing? For why make a request to receive a post if it already exists.
+    */
+
+    const state = store.getState()
+    if (state.post.isHave) return
+
     await dispatch(fetchPost())
 })
 

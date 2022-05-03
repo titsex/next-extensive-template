@@ -5,6 +5,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState: PostState = {
     post: {} as IPost,
     isHave: false,
+    isPending: false,
     error: '',
 }
 
@@ -12,20 +13,25 @@ export const postSlice = createSlice({
     name: 'post',
     initialState,
     reducers: {
-        resetPosts: state => {
+        reset: state => {
             state.post = {} as IPost
             state.isHave = false
         },
     },
     extraReducers: builder => {
         builder
+            .addCase(fetchPost.pending, state => {
+                state.isPending = true
+            })
             .addCase(fetchPost.fulfilled, (state, action) => {
                 state.post = action.payload
                 state.isHave = true
+                state.isPending = false
                 state.error = ''
             })
             .addCase(fetchPost.rejected, (state, action) => {
                 state.error = (action.payload as string) || 'Неизвестная ошибка'
+                state.isPending = false
             })
     },
 })

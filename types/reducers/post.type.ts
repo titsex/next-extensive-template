@@ -8,6 +8,7 @@ export interface IPost {
 export interface PostState {
     post: IPost
     isHave: boolean
+    isPending: boolean
     error: string
 }
 

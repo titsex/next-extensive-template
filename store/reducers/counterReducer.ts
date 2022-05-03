@@ -17,7 +17,7 @@ export const counterSlice = createSlice({
             state.count--
         },
 
-        resetCounter: state => {
+        reset: state => {
             state.count = 0
         },
     },

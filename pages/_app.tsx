@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 import { SessionProvider } from 'next-auth/react'
 import type { AppProps } from 'next/app'
@@ -14,11 +15,22 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps: { session, ...pageProp
             <Head>
                 <title>Next Extensive Template</title>
 
-                <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-                <link rel="manifest" href="/site.webmanifest" />
+                <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+                <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+                <link rel="manifest" href="/manifest.json" />
                 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+
+                <meta charSet="UTF-8" />
+
+                <meta name="msapplication-TileColor" content="#333333" />
+                <meta name="theme-color" content="#ffffff" />
+                <meta name="robots" content="index,follow" />
+                <meta name="googlebot" content="index,follow" />
+                <meta name="description" content="The most extensive template for NEXT.js" />
+                <meta name="keywords" content="NEXT.js, template, next-redux, redux-toolkit" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
                 {/*
                     @ru Предварительная загрузка bootstrap bundle.
@@ -32,16 +44,6 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps: { session, ...pageProp
                     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
                     crossOrigin="anonymous"
                 />
-
-                <meta charSet="UTF-8" />
-
-                <meta name="msapplication-TileColor" content="#333333" />
-                <meta name="theme-color" content="#ffffff" />
-                <meta name="robots" content="index,follow" />
-                <meta name="googlebot" content="index,follow" />
-                <meta name="description" content="The most extensive template for NEXT.js" />
-                <meta name="keywords" content="NEXT.js, template, next-redux, redux-toolkit" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
 
             <SessionProvider session={session}>
@@ -68,8 +70,6 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps: { session, ...pageProp
                 @font-face {
                     font-display: swap;
                 }
-
-                @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css');
             `}</style>
 
             {/*

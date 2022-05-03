@@ -4,4 +4,5 @@ export const routes: IRoutes[] = [
     { title: 'Главная', path: '/' },
     { title: 'Пост', path: '/post' },
     { title: 'Счётчик', path: '/counter' },
+    { title: 'Тудушки (useTransition example)', path: '/todos' },
 ]

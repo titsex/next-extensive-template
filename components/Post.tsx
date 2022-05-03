@@ -5,8 +5,8 @@ import { useAppDispatch } from '@hook/useAppDispatch'
 import React from 'react'
 
 const Post = () => {
-    const { error, post, isHave } = useTypedSelector(state => state.post)
-    const { resetPosts } = useTypedActions(actions => actions.post)
+    const { error, post, isHave, isPending } = useTypedSelector(state => state.post)
+    const { reset } = useTypedActions(actions => actions.post)
 
     const dispatch = useAppDispatch()
 
@@ -27,7 +27,7 @@ const Post = () => {
                         </div>
                     </div>
                 ) : (
-                    <h3 className="text-center mb-4">Пост не найден</h3>
+                    <h3 className="text-center mb-4">{isPending ? 'Получаем пост..' : 'Пост не найден'}</h3>
                 )}
 
                 <div className="btn-group w-100">
@@ -39,7 +39,7 @@ const Post = () => {
                         Получить пост
                     </button>
 
-                    <button onClick={() => resetPosts()} disabled={!isHave} className="btn btn-outline-danger">
+                    <button onClick={() => reset()} disabled={!isHave} className="btn btn-outline-danger">
                         Удалить пост
                     </button>
                 </div>
