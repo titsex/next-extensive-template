@@ -17,8 +17,11 @@ export const todoSlice = createSlice({
             state.todos = [] as ITodo[]
         },
         toggleTodo: (state, action: PayloadAction<ITodoToggleTodosAction>) => {
-            const todo = state.todos.find(x => x.id === action.payload.id)!
-            todo.completed = action.payload.checked
+            const findTodo = state.filteredTodos.find(x => x.id === action.payload.id)
+            const findFilteredTodo = state.todos.find(x => x.id === action.payload.id)
+
+            if (findTodo) findTodo.completed = action.payload.checked
+            if (findFilteredTodo) findFilteredTodo.completed = action.payload.checked
         },
         search: (state, action: PayloadAction<string>) => {
             if (action.payload.length) {
