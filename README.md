@@ -63,4 +63,4 @@ pnpm start
 > #### After you have created the application, you need to copy the client ID and paste it into the GITHUB_ID variable in .env
 > #### After that, on the page of your OAuth App, click "Generate a new client secret", copy the secret and paste it into the GITHUB_SECRET variable in .env
 > #### Then go to the page: https://generate-secret.vercel.app/32, copy a random secret key and paste it into the SECRET field in .env
-> #### And finally, JWT_SIGNING_PRIVATE_KEY. We advise you to install the node-jose-tools package globally (npm install node-jose-tools) and write the command ```jose newkey -s 256 -t oct -a HS512```, then copy the resulting object and paste it into JWT_SIGNING_PRIVATE_KEY in .env
+> #### And finally, JWT_SIGNING_PRIVATE_KEY. We advise you to install the node-jose-tools package globally (npm install node-jose-tools -g) and write the command ```jose newkey -s 256 -t oct -a HS512```, then copy the resulting object and paste it into JWT_SIGNING_PRIVATE_KEY in .env
