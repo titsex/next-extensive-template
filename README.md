@@ -12,22 +12,6 @@
 gh repo clone titsex/next-extensive-template
 ```
 
-> Or use a [template generator](https://www.npmjs.com/package/framework-template-generator). Install it using your package manager
-
-```
-npm install -g framework-template-generator
-yarn add -g framework-template-generator
-pnpm add -g framework-template-generator
-```
-
-> After entering this command, you will have a choice of several templates. Using the arrows, you will need to select [next-extensive-template](https://github.com/titsex/next-extensive-template)
-
-```
-framework-template-generator
-```
-
-# If you chose the first option
-
 > Installing dependencies
 
 ```
